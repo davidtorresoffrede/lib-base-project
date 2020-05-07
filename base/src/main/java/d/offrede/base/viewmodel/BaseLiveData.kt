@@ -23,17 +23,17 @@ class BaseLiveData<T : ViewModelResult<Any>> : MutableLiveData<Pair<VisibilitySt
     }
 
     fun makeVisible(result: T) {
-        this.value = VISIBLE to result
+        this.postValue(VISIBLE to result)
 
     }
 
     fun makeInvisible(result: T) {
-        this.value = INVISIBLE to result
+        this.postValue(INVISIBLE to result)
 
     }
 
     fun makeGone(result: T) {
-        this.value = GONE to result
+        this.postValue(GONE to result)
 
     }
 
